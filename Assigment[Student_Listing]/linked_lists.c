@@ -151,14 +151,14 @@ int pos = 0;
 			{
 				link->next = head;
 				//store data in the node
-						   for(int i=0;i<30;i++)
-						   {link->S.Name[i] = s.Name[i];}
+				for(int i=0;i<30;i++)
+				{link->S.Name[i] = s.Name[i];}
 
-						   link->S.ID=s.ID;
-						   link->S.Date[0]=s.Date[0];
-						   link->S.Date[1]=s.Date[1];
-						   link->S.Date[2]=s.Date[2];
-						   link->S.Score=s.Score;
+				link->S.ID=s.ID;
+				link->S.Date[0]=s.Date[0];
+				link->S.Date[1]=s.Date[1];
+				link->S.Date[2]=s.Date[2];
+				link->S.Score=s.Score;
 				head = link;
 				return;
 			}

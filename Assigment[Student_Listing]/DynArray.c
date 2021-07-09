@@ -24,12 +24,13 @@ student* PsCreateList(student parameters){
 }
 
 void vInsertFromBegin(student* Student_List, student parameters){
-    if(Student_List == NULL){
+    /*if(Student_List == NULL){
         Student_List = PsCreateList(parameters);
         return;
-    }
-    realloc( Student_List, (N+1) * sizeof(student));
+    }*/
+    Student_List = (student*)realloc( Student_List, (N+1) * sizeof(student));
     N++;
+    /*shifting the existed data*/
     for(int i=N-1; i>0; i--){
         Student_List[i].ID = Student_List[i-1].ID;
         Student_List[i].Date[0] = Student_List[i-1].Date[0];
@@ -39,6 +40,7 @@ void vInsertFromBegin(student* Student_List, student parameters){
         strcpy(Student_List[i].Name, Student_List[i-1].Name);
         Student_List[i].Score = Student_List[i-1].Score;
     }
+    /*inserting the new data in the beginning*/
     Student_List[0].ID = parameters.ID;
     Student_List[0].Date[0] = parameters.Date[0];
     Student_List[0].Date[1] = parameters.Date[1];
@@ -53,7 +55,7 @@ void vInsertFromEnd(student* Student_List, student parameters){
         Student_List = PsCreateList(parameters);
         return;
     }*/
-    realloc( Student_List, (N+1) * sizeof(student));
+    Student_List = (student*)realloc( Student_List, (N+1) * sizeof(student));
     
     Student_List[N].ID = parameters.ID;
     Student_List[N].Date[0] = parameters.Date[0];
@@ -71,7 +73,7 @@ void vInsertFromMiddle(student* Student_List, student parameters){
         Student_List = PsCreateList(parameters);
         return;
     }*/
-    realloc( Student_List, (N+1) * sizeof(student));
+    Student_List = (student*)realloc( Student_List, (N+1) * sizeof(student));
     if(N == 1){ //I have only one node, so it will put the new node at the end 
         Student_List[N].ID = parameters.ID;
         Student_List[N].Date[0] = parameters.Date[0];

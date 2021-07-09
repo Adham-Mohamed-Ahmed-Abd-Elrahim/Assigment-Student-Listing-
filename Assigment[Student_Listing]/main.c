@@ -22,8 +22,8 @@ void storingData(void);
 /*void size_time(int M);*/
 int main()
 {
-    /*clock_t start[6], end;
-    double total;*/
+    clock_t start, end;
+    double total[6];
     printf("Welcome\n");
     student *list = NULL;
 
@@ -52,18 +52,18 @@ int main()
                 insertInTheBeginning(parameters);
                 break;
             case 2:
+                
                 storingData();
                 insertAtTheLast(parameters);
                 break;
             case 3:
                 printf("Enter the position: ");
                 scanf("%d", &position);
-                storingData();
+                storingData();              
                 insertNodeInsideList(parameters, position);
                 break;
             case 4:
                 printList();
-                break;
                 break;
             case 5:
                 printf("The size of a single struct = %d\n",sizeof(parameters));
@@ -71,6 +71,7 @@ int main()
                 break;
             case 6:
                 goto loop;
+                break;
             default:
                 printf("Enter a valid number!\n");
                 break;
@@ -94,10 +95,10 @@ int main()
                 if (list == NULL)
                 {   
                     list = PsCreateList(parameters);
-
                 }
                 else
                 { 
+                    
                     vInsertFromBegin(list, parameters);
                 }
                 break;
@@ -109,8 +110,8 @@ int main()
                 }
                 else
                 {
+                    
                     vInsertFromEnd(list, parameters);
-                }
                 break;
             case 3:
                 storingData();
@@ -120,6 +121,7 @@ int main()
                 }
                 else
                 {
+                    
                     vInsertFromMiddle(list, parameters);
                 }
                 break;
