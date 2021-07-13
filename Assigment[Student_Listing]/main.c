@@ -112,6 +112,7 @@ int main()
                 {
                     
                     vInsertFromEnd(list, parameters);
+                }
                 break;
             case 3:
                 storingData();
